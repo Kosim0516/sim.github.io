@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Sim Site</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>My Website</h1>
+        <h1>Sim Site</h1>
     </header>
     
     <nav>
@@ -21,18 +21,55 @@
     </nav>
     
     <section id="introduction">
-        <h2>Jeong Hyun Sim Site</h2>
+        <h2>자기소개</h2>
         <p>
+            제가 공부하는 것들과 대외 활동 등 업로드하는 사이트입니다. 
             <br> 이름: 심정현
             <br> 생년월일: 2001.05.16
-            <br> 성별: 남
-            <br> 관심 분야: 인공지능 보안
         </p>
     </section>
 
+    <section id="education" style="display: none;">
+        <h2>학력</h2>
+        <p>
+            2020.03 ~ 현재 단국대학교 재학 중
+        </p>
+    </section>
+
+    <section id="experience" style="display: none;">
+        <h2>경력</h2>
+        <p>
+            2023년~ : 학부 연구생 
+            
+            
+        </p>
+    </section>
+
+    <section id="activities" style="display: none;">
+        <h2>활동</h2>
+        <p>2023년 : 정보보호학회 (KCI) 논문 게재</p>
+    </section>
     
     <footer>
-        <p>&copy; My Website</p>
+        <p>&copy; Sim Website</p>
     </footer>
+
+    <script>
+        const sections = document.querySelectorAll('section');
+
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const id = this.getAttribute('href').substring(1);
+                sections.forEach(section => {
+                    if (section.id === id) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
